@@ -1,9 +1,11 @@
-def extend(num, lines):  # 整体延长,生成新list 
+def randomapart(lines): 
  
-    newlines = copy.deepcopy(lines) 
-    for i in range(len(newlines)): 
-        for j in range(len(newlines[i])): 
-            for k in range(len(newlines[i][j])): 
-                newlines[i][j][k] *= num 
+    len1 = len(lines) 
+    part = [] 
+    randomnunm1 = random.randrange(len1) 
+    part.append(randomnunm1) 
+    len2 = len(lines[randomnunm1]) 
+    randomnunm2 = random.randrange(len2) 
+    part.append(randomnunm2) 
  
-    return newlines
+    return part
