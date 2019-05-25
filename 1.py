@@ -1,4 +1,4 @@
-1.	def transall(num, lines):  # 整体移调,生成新list 
+def transall(num, lines):  # 整体移调,生成新list 
  
     newlines = copy.deepcopy(lines) 
     for i in range(len(newlines)): 
