@@ -1,20 +1,20 @@
-def pri(out):   # 将三维数组格式改为给定目标格式的函数 
-     
-    lines_new = [] 
-    for lines in out: 
-        blank3=[] 
-        for xj in lines: 
-            xja = list(map(str,xj)) 
-            a = ' '.join(xja) 
-            blank1 = [[]] 
-            blank1[0] = a 
-            blank3.append(blank1) 
-        string = '' 
-        for k in range(len(blank3)): 
-            if k == len(blank3)-1: 
-                string = string + blank3[k][0] + '    ' + '\n'  # 增加换行 
-            else: 
-                string = string + blank3[k][0] + '    ' 
-        lines_new.append(string) 
- 
-    return lines_new
+def inversionall(lines):  # 整体倒影
+
+    newlines = copy.deepcopy(lines)
+    for i in range(len(newlines)):
+        for j in range(len(newlines[i])):
+            x = newlines[i][j][0]
+            for k in range(len(newlines[i][j])):
+                newlines[i][j][k] = 2 * x - newlines[i][j][k]
+
+    return newlines
+
+
+def inversionOne(part, lines):  # 部分倒影
+
+    newlines = copy.deepcopy(lines)
+    x = newlines[part[0]][part[1]][0]
+    for i in range(len(newlines[part[0]][part[1]])):
+        newlines[part[0]][part[1]][i] = 2 * x - newlines[part[0]][part[1]][i]
+
+    return newlines
